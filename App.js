@@ -25,8 +25,8 @@ app.use(
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "kanbas",
   resave: false,
-  timeout: 1000,
   saveUninitialized: false,
+
 };
 
 if (process.env.NODE_ENV !== "development") {
@@ -34,8 +34,13 @@ if (process.env.NODE_ENV !== "development") {
   sessionOptions.cookie = {
     sameSite: "none",
     secure: true,
+    maxAge: 1000 * 60 * 60 * 24, // Session max age in milliseconds (e.g., 1 day)
     domain: process.env.NODE_SERVER_DOMAIN,
   };
+}
+
+if (process.env.NODE_ENV === "production") {
+  sessionOptions.proxy = true; // Trusting the first proxy
 }
 
 app.use(session(sessionOptions));
