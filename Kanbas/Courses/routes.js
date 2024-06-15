@@ -8,6 +8,7 @@ export default function CourseRoutes(app) {
 
   app.post("/api/courses", async (req, res) => {
     const course = await dao.addCourse(req.body);
+    console.log(course);
     res.json(course);
   });
 

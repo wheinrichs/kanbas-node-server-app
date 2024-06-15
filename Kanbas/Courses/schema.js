@@ -7,6 +7,7 @@ const coursesSchema = new mongoose.Schema({
     department: String,
     credits: Number,
     description: String,
+    image: String,
 },
 {collection: "courses"});
 export default coursesSchema;
