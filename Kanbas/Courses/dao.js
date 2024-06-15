@@ -2,11 +2,11 @@ import model from "./model.js";
 
 export const findAllCourses = () => {
     // Use the model to find all results
-    return model.find()
+    return model.find();
 }
 
 export const deleteCourse = (courseID) => {
-    return model.deleteOne({_id: courseID})
+    return model.deleteOne({_id: courseID});
 }
 
 export const addCourse = (course) => {

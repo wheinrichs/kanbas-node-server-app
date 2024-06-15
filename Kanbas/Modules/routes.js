@@ -1,24 +1,21 @@
-import db from "../Database/index.js";
+import * as dao from "./dao.js";
 export default function ModuleRoutes(app) {
-  app.get("/api/courses/:cid/modules", (req, res) => {
+
+  app.get("/api/courses/:cid/modules", async (req, res) => {
     const { cid } = req.params;
-    const modules = db.modules.filter((m) => m.course === cid);
+    const modules = await dao.findModulesByCourse(cid);
     res.json(modules);
   });
-  app.post("/api/courses/:cid/modules", (req, res) => {
-    const { cid } = req.params;
-    const newModule = {
-      ...req.body,
-      course: cid,
-      _id: new Date().getTime().toString(),
-    };
-    db.modules.push(newModule);
-    res.send(newModule);
+
+  app.post("/api/courses/:cid/modules", async (req, res) => {
+    const newModule =  await dao.addModule(req.body);
+    res.json(newModule);
   });
-  app.delete("/api/modules/:mid", (req, res) => {
+
+  app.delete("/api/modules/:mid", async (req, res) => {
     const { mid } = req.params;
-    db.modules = db.modules.filter((m) => m._id !== mid);
-    res.sendStatus(200);
+    const status = await dao.deleteModule(mid);
+    res.json(status);
   });
 
   app.put("/api/modules/:mid", (req, res) => {
