@@ -11,22 +11,20 @@ export default function UserRoutes(app) {
   };
 
   const findAllUsers = async (req, res) => {
-    // console.log("Hey how is it going?");
-    // const { role, name } = req.query; // If something is passed in the function
-    // if (role) {
-    //   const users = await dao.findUsersByRole(role);
-    //   res.json(users);
-    //   return;
-    // }
-    // if (name) {
-    //   const users = await dao.findUsersByPartialName(name);
-    //   res.json(users);
-    //   return;
-    // }
+    const { role, name } = req.query; // If something is passed in the function
+    if (role) {
+      const users = await dao.findUsersByRole(role);
+      res.json(users);
+      return;
+    }
+    if (name) {
+      const users = await dao.findUsersByPartialName(name);
+      res.json(users);
+      return;
+    }
 
-    // const users = await dao.findAllUsers();
-    // res.json(users);
-    res.send('API USERS');
+    const users = await dao.findAllUsers();
+    res.json(users);
   };
 
   const findUserById = async (req, res) => {
