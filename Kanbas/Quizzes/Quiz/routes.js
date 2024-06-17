@@ -12,8 +12,8 @@ export default function QuizRoutes(app) {
   });
 
   app.post("/api/quizzes", async (req, res) => {
-    const newQuestion = await dao.addQuiz(req.body);
-    res.json(newQuestion);
+    const newQuiz = await dao.addQuiz(req.body);
+    res.json(newQuiz);
   });
 
   app.put("/api/quizzes/:qid", async (req, res) => {

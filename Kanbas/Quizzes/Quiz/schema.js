@@ -3,7 +3,7 @@ const quizzes = new mongoose.Schema({
     title: String,
     points: String,
     courseID: {type: String, required: true},
-    available_dat: Date,
+    available_date: Date,
     due_date: Date
 },
 {collection: "quizzes"}
