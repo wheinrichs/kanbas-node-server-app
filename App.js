@@ -6,6 +6,8 @@ import cors from "cors";
 import Exam from "./Lab5/Exam/index.js"
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
+import QuizRoutes from "./Kanbas/Quizzes/Quiz/routes.js";
+import QuizQuestionsRoutes from "./Kanbas/Quizzes/QuizQuestions/routes.js";
 import mongoose from "mongoose";
 import "dotenv/config";
 import UserRoutes from "./Users/routes.js";
@@ -54,6 +56,8 @@ CourseRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
 UserRoutes(app);
+QuizRoutes(app);
+QuizQuestionsRoutes(app);
 Exam(app);
 
 app.listen(process.env.PORT || 4000); // Its either the env port or the local port is env isnt defined

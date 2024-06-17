@@ -1,5 +1,10 @@
 import * as dao from "./dao.js";
 export default function QuizRoutes(app) {
+  app.get("/api/quizzes", async (req, res) => {
+    const quizzes = await dao.findAllQuizzes();
+    res.json(quizzes);
+  });
+
   app.get("/api/quizzes/:cid", async (req, res) => {
     const { cid } = req.params;
     const quizzes = await dao.findQuizByCourse(cid);
