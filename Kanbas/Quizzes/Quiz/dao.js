@@ -4,6 +4,10 @@ export const findAllQuizzes = () => {
     return model.find();
 }
 
+export const findQuizByID = (quizID) => {
+    return model.find({ _id: quizID});
+}
+
 export const findQuizByCourse = (courseID) => {
     return model.find({ courseID: courseID});
 }
