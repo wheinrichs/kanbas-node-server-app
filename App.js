@@ -3,6 +3,7 @@ import Lab5 from "./Lab5/index.js";
 import Hello from "./Hello.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import cors from "cors";
+import Exam from "./Lab5/Exam/index.js"
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
 import mongoose from "mongoose";
@@ -53,5 +54,6 @@ CourseRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
 UserRoutes(app);
+Exam(app);
 
 app.listen(process.env.PORT || 4000); // Its either the env port or the local port is env isnt defined

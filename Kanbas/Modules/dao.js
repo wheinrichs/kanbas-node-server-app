@@ -16,3 +16,7 @@ export const addModule = (module) => {
     delete module._id;
     return model.create(module);
 }
+
+export const editModule = (moduleID, module) => {
+    return model.updateOne({ _id: moduleID }, { $set: module }); // $set updates the fields that match the passed in object
+}
