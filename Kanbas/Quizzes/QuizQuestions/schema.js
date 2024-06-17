@@ -8,6 +8,6 @@ const quizQuestions = new mongoose.Schema({
     choices: [String],
     answers: [String]
 },
-{collection: "quizQuestions"}
+{collection: "quiz_questions"}
 );
 export default quizQuestions;
