@@ -6,7 +6,8 @@ const quizQuestions = new mongoose.Schema({
     points: String,
     question: String,
     choices: [String],
-    answers: [String]
+    answers: [String],
+    editing: String,
 },
 {collection: "quiz_questions"}
 );
