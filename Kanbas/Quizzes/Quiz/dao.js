@@ -20,3 +20,7 @@ export const addQuiz = (quiz) => {
 export const editQuiz = (quizID, quiz) => {
     return model.updateOne({_id: quizID}, { $set: quiz});
 }
+
+export const deleteQuiz = (quizID) => {
+    return model.deleteOne({_id: quizID});
+}

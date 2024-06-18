@@ -27,4 +27,10 @@ export default function QuizRoutes(app) {
     const status = await dao.editQuiz(qid, req.body);
     res.json(status);
   });
+
+  app.delete("/api/quizzes/:qid", async (req, res) => {
+    const { qid } = req.params;
+    const status = await dao.deleteQuiz(qid);
+    res.json(status);
+  });
 }
