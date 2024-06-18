@@ -16,3 +16,7 @@ export const addQuestion = (question) => {
 export const editQuestion = (questionID, question) => {
     return model.updateOne({_id: questionID}, { $set: question});
 }
+
+export const deleteQuestion = (questionID) => {
+    return model.deleteOne({_id: questionID});
+}

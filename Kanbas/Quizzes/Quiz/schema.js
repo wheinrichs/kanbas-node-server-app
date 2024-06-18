@@ -7,7 +7,7 @@ const quizzes = new mongoose.Schema({
     due_date: Date,
     instructions: String,
     type: {type: String, default: "gradedQuiz"},
-    assignmentGroup: {type: String, default: "quizzes"},
+    assignment_group: {type: String, default: "quizzes"},
     shuffle: {type: Boolean, default: true},
     time_limit: {type: Boolean, default: true},
     time: {type: String, default: "20"},

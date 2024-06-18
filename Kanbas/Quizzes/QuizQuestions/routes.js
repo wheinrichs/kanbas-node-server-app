@@ -22,4 +22,10 @@ export default function QuizQuestionRoutes(app) {
     const status = await dao.editQuestion(questionid, req.body);
     res.json(status);
   });
+
+  app.delete("/api/questions/:questionid", async (req, res) => {
+    const { qid, questionid } = req.params;
+    const status = await dao.deleteQuestion(questionid);
+    res.json(status);
+  });
 }
