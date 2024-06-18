@@ -5,8 +5,8 @@ const quizQuestions = new mongoose.Schema({
     title: String,
     points: String,
     question: String,
-    choices: [String],
-    answers: [String],
+    choices: { type: mongoose.Schema.Types.Mixed },
+    answers: { type: mongoose.Schema.Types.Mixed },
     editing: String,
 },
 {collection: "quiz_questions"}
