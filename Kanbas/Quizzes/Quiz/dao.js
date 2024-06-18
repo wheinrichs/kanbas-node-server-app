@@ -5,7 +5,7 @@ export const findAllQuizzes = () => {
 }
 
 export const findQuizByID = (quizID) => {
-    return model.find({ _id: quizID});
+    return model.findOne({ _id: quizID});
 }
 
 export const findQuizByCourse = (courseID) => {
