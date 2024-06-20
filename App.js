@@ -15,7 +15,7 @@ import session from "express-session";
 import QuizGradesRoute from "./Kanbas/Quizzes/QuizGrades/routes.js";
 
 const CONNECTION_STRING =
-  process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas-su1";
+  process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas-su1"
 mongoose.connect(CONNECTION_STRING);
 
 const app = express(); // Sets up the express
