@@ -12,6 +12,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import UserRoutes from "./Users/routes.js";
 import session from "express-session";
+import QuizGradesRoute from "./Kanbas/Quizzes/QuizGrades/routes.js";
 
 const CONNECTION_STRING =
   process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas-su1";
@@ -59,5 +60,6 @@ UserRoutes(app);
 QuizRoutes(app);
 QuizQuestionRoutes(app);
 Exam(app);
+QuizGradesRoute(app);
 
 app.listen(process.env.PORT || 4000); // Its either the env port or the local port is env isnt defined
