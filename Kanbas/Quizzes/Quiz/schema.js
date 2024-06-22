@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 const quizzes = new mongoose.Schema({
-    title: String,
+    title: {type: String, default: "New Quiz"},
     points: String,
     courseID: {type: String, required: true},
     available_date: Date,
