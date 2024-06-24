@@ -1,13 +1,19 @@
-import mongoose from "mongoose"
-const coursesSchema = new mongoose.Schema({
+import mongoose from "mongoose";
+
+const courseSchema = new mongoose.Schema({
+    number:{type: String},
     name: {type: String},
-    number: {type: String},
-    startDate: String,
-    endDate: String,
+    startDate: Date,
+    endDate: Date,
     department: String,
-    credits: Number,
+    credits: String,
     description: String,
     image: String,
-},
-{collection: "courses"});
-export default coursesSchema;
+    author:{ 
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "UserModel",
+    },
+  },
+  { collection: "courses" }
+);
+export default courseSchema;
