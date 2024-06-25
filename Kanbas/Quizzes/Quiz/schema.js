@@ -17,7 +17,8 @@ const quizzes = new mongoose.Schema({
     one_at_a_time: {type: Boolean, default: true},
     webcam: {type: Boolean, default: false},
     lock_after: {type: Boolean, default: false},
-    access_code: String
+    access_code: String,
+    new: {type: Boolean, default: true}
 },
 {collection: "quizzes"}
 );
