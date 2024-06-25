@@ -17,3 +17,7 @@ export const addCourse = (course) => {
 export const editCourse = (courseID, course) => {
     return model.updateOne({ _id: courseID }, { $set: course }); // $set updates the fields that match the passed in object
 }
+
+export function findCoursesByAuthor(author) {
+    return model.find({author});
+}

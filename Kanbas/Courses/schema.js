@@ -8,6 +8,10 @@ const coursesSchema = new mongoose.Schema({
     credits: Number,
     description: String,
     image: String,
+    author:{ 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "UserModel",
+      },
 },
 {collection: "courses"});
 export default coursesSchema;
