@@ -20,7 +20,7 @@ const quizzes = new mongoose.Schema({
     lock_after: {type: Boolean, default: false},
     access_code: String,
     new: {type: Boolean, default: true},
-    published: {type: Boolean, default: false}
+    published: {type: Boolean, default: false},
 },
 {collection: "quizzes"}
 );
