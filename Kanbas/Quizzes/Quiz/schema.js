@@ -12,7 +12,7 @@ const quizzes = new mongoose.Schema({
     time_limit: {type: Boolean, default: true},
     time: {type: String, default: "20"},
     attempts: {type: Boolean, default: false},
-    numberOfAttempts: {type: Number, default: 0},
+    numberOfAttempts: {type: Number, default: 1},
     until_date: Date,
     show_correct_answers: {type: Boolean},
     one_at_a_time: {type: Boolean, default: true},
