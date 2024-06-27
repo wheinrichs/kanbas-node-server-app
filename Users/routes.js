@@ -40,6 +40,7 @@ export default function UserRoutes(app) {
       const { userId } = req.params;
       console.log("Backend updateUser - before DAO call:", userId, req.body); // Log user data before DAO call
       const status = await dao.updateUser(userId, req.body);
+      req.session["currentUser"] = req.body;
       console.log("Backend updateUser - DAO response:", status); // Log DAO response
       res.json(status);
     } catch (error) {
