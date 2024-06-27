@@ -3,7 +3,8 @@ const quizGrades = new mongoose.Schema({
     userID: { type: String, required: true },
     quizID: { type: String, required: true },
     studentChoices: { type: mongoose.Schema.Types.Mixed },
-    grade: Number
+    grade: Number,
+    timeTaken: Date
 },
 {collection: "quiz_grades"}
 );
